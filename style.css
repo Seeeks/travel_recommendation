@@ -78,6 +78,7 @@ nav input {
     padding: 4px;
     border-radius: 0.5rem;
     margin-right: 8px;
+    color: black;
 }
 
 nav input::placeholder {
