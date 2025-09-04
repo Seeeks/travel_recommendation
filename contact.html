@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendations | TravelBloom</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <img src="airplane_logo.png" alt="TravelBloom logo">
+        <h1>TravelBloom</h1>
+        <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="./about.html">About Us</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+        <form id="searchForm">
+            <input name="search" id="searchInput" value="" placeholder="Enter a destination or keyword">
+            <img src="magnifying_glass.svg" alt="magnifying glass">
+            <button id="searchBut">Search</button>
+            <button id="clearSearch">Clear</button>
+        </form>
+    </ul>
+    </nav>
+    <div class="container">
+        <h2>Contact Us</h2>
+        
+        <p>We would love to hear from you. Drop us a line and we will get back to you.</p>
+        <form method="post" action="#" id="contactForm">
+            <label for="">Name</label>
+            <input value="" name="name" id="nameInput">
+            <input type="submit" value="Send message" id="submitContact">
+        </form>
+        <div class="social-icon-container">
+            <img src="./twitter.svg" alt="X">
+            <img src="./facebook.svg" alt="Facebook">
+            <img src="./instagram.svg" alt="Instagram">
+            <img src="./youtube.svg" alt="YouTube">
+        </div>
+    </div>
+    <script src="./travel_recommendations.js"></script>
+</body>
+</html>
