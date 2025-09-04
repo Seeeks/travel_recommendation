@@ -8,31 +8,35 @@
 </head>
 <body>
     <nav>
-        <img src="airplane_logo.png" alt="TravelBloom logo">
+        <div class="navbar-brand">
+        <img src="./images/travel-icon.png" alt="TravelBloom logo" class="invert-color">
         <h1>TravelBloom</h1>
+        </div>
         <ul>
         <li><a href="#">Home</a></li>
         <li><a href="./about.html">About Us</a></li>
         <li><a href="./contact.html">Contact Us</a></li>
-        <form id="searchForm">
-            <input name="search" id="searchInput" value="" placeholder="Enter a destination or keyword">
-            <img src="magnifying_glass.svg" alt="magnifying glass">
-            <button id="searchBut">Search</button>
-            <button id="clearSearch">Clear</button>
-        </form>
     </ul>
+    <form id="searchForm">
+        <input name="search" id="searchInput" value="" placeholder="Enter a destination or keyword">
+        <img src="./images/search-icon.png" alt="magnifying glass" class="small">
+        <button id="searchBut">Search</button>
+        <button id="clearSearch">Clear</button>
+    </form>
     </nav>
+    <main>
+        <div class="social-icon-container">
+            <img src="./images/twitter.png" alt="X" class="invert-color icon">
+            <img src="./images/facebook.png" alt="Facebook" class="invert-color icon">
+            <img src="./images/instagram.png" alt="Instagram" class="invert-color icon">
+            <img src="./images/youtube.png" alt="YouTube" class="invert-color icon">
+        </div>
     <div class="container">
         <h2>Explore your dream destination!</h2>
         
         <p>Traveling broadens your horizons, enables you to meet new people and experience the colors, scents and flavors of the world. Find information about our partner locations and choose a destination today!</p>
-        <div class="social-icon-container">
-            <img src="./twitter.svg" alt="X">
-            <img src="./facebook.svg" alt="Facebook">
-            <img src="./instagram.svg" alt="Instagram">
-            <img src="./youtube.svg" alt="YouTube">
-        </div>
     </div>
+    </main>
     <script src="./travel_recommendations.js"></script>
 </body>
 </html>

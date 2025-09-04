@@ -8,20 +8,29 @@
 </head>
 <body>
     <nav>
-        <img src="airplane_logo.png" alt="TravelBloom logo">
-        <h1>TravelBloom</h1>
+        <div class="navbar-brand">
+            <img src="./images/travel-icon.png" alt="TravelBloom logo" class="invert-color">
+            <h1>TravelBloom</h1>
+        </div>
         <ul>
-        <li><a href="./travel_recommendations.html">Home</a></li>
+        <li><a href="./travel_recommendation.html">Home</a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="./contact.html">Contact Us</a></li>
-        <form id="searchForm">
-            <input name="search" id="searchInput" value="" placeholder="Enter a destination or keyword">
-            <img src="magnifying_glass.svg" alt="magnifying glass">
-            <button id="searchBut">Search</button>
-            <button id="clearSearch">Clear</button>
-        </form>
     </ul>
+    <form id="searchForm">
+        <input name="search" id="searchInput" value="" placeholder="Enter a destination or keyword">
+        <img src="./images/search-icon.png" alt="magnifying glass" class="small">
+        <button id="searchBut">Search</button>
+        <button id="clearSearch">Clear</button>
+    </form>
     </nav>
+    <main>
+    <div class="social-icon-container">
+        <img src="./images/twitter.png" alt="X" class="invert-color icon">
+        <img src="./images/facebook.png" alt="Facebook" class="invert-color icon">
+        <img src="./images/instagram.png" alt="Instagram" class="invert-color icon">
+        <img src="./images/youtube.png" alt="YouTube" class="invert-color icon">
+    </div>
     <div class="container">
         <h2>About us</h2>
         
@@ -31,32 +40,27 @@
         <div class="panel-4">
             <h3>Our Team</h3>
             <div class="employee-profile">
-                <img src="miniman.png" alt="employee photo">
+                <img src="images/account-icon.png" alt="employee photo" class="invert-color small">
                 <strong>John Doe</strong>
                 <p>John is responsible for...</p>
                 <span class="badge">CEO</span>
             </div>
             <div class="employee-profile">
-                <img src="miniman.png" alt="employee photo">
+                <img src="images/account-icon.png" alt="employee photo" class="invert-color small">
                 <strong>Celina Thomas</strong>
                 <p>Celina is responsible for...</p>
                 <span class="badge">Team Lead</span>
             </div>
             <div class="employee-profile">
-                <img src="miniman.png" alt="employee photo">
+                <img src="images/account-icon.png" alt="employee photo" class="invert-color small">
                 <strong>Michael Tyson</strong>
                 <p>Mike is responsible for...</p>
                 <span class="badge">Delivery Head</span>
             </div>
         </div>
         <p>Feel free to explore our website to learn more about what we offer!</p>
-        <div class="social-icon-container">
-            <img src="./twitter.svg" alt="X">
-            <img src="./facebook.svg" alt="Facebook">
-            <img src="./instagram.svg" alt="Instagram">
-            <img src="./youtube.svg" alt="YouTube">
-        </div>
     </div>
+    </main>
     <script src="./travel_recommendations.js"></script>
 </body>
 </html>

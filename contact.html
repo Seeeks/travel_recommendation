@@ -8,36 +8,45 @@
 </head>
 <body>
     <nav>
-        <img src="airplane_logo.png" alt="TravelBloom logo">
-        <h1>TravelBloom</h1>
+        <div class="navbar-brand">
+            <img src="./images/travel-icon.png" alt="TravelBloom logo" class="invert-color">
+            <h1>TravelBloom</h1>
+        </div>
         <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="./travel_recommendation.html">Home</a></li>
         <li><a href="./about.html">About Us</a></li>
-        <li><a href="./contact.html">Contact Us</a></li>
-        <form id="searchForm">
-            <input name="search" id="searchInput" value="" placeholder="Enter a destination or keyword">
-            <img src="magnifying_glass.svg" alt="magnifying glass">
-            <button id="searchBut">Search</button>
-            <button id="clearSearch">Clear</button>
-        </form>
+        <li><a href="#">Contact Us</a></li>
     </ul>
+    <form id="searchForm">
+        <input name="search" id="searchInput" value="" placeholder="Enter a destination or keyword">
+        <img src="./images/search-icon.png" alt="magnifying glass" class="small">
+        <button id="searchBut">Search</button>
+        <button id="clearSearch">Clear</button>
+    </form>
     </nav>
+    <main>
+        <div class="social-icon-container">
+            <img src="./images/twitter.png" alt="X" class="invert-color icon">
+            <img src="./images/facebook.png" alt="Facebook" class="invert-color icon">
+            <img src="./images/instagram.png" alt="Instagram" class="invert-color icon">
+            <img src="./images/youtube.png" alt="YouTube" class="invert-color icon">
+        </div>
     <div class="container">
         <h2>Contact Us</h2>
         
         <p>We would love to hear from you. Drop us a line and we will get back to you.</p>
         <form method="post" action="#" id="contactForm">
-            <label for="">Name</label>
-            <input value="" name="name" id="nameInput">
+            <label for="nameInput">Name</label>
+            <input value="" name="name" id="nameInput" type="text">
+            <label for="emailInput">Email</label>
+            <input value="" name="email" id="emailInput" type="email">
+            <label for="nameInput">Name</label>
+            <textarea name="message" id="msgTextarea" placeholder="Write your message here">
+            </textarea>
             <input type="submit" value="Send message" id="submitContact">
         </form>
-        <div class="social-icon-container">
-            <img src="./twitter.svg" alt="X">
-            <img src="./facebook.svg" alt="Facebook">
-            <img src="./instagram.svg" alt="Instagram">
-            <img src="./youtube.svg" alt="YouTube">
-        </div>
     </div>
+    </main>
     <script src="./travel_recommendations.js"></script>
 </body>
 </html>
