@@ -55,13 +55,30 @@ nav ul li {
     padding: 4px 8px;
 }
 
-nav button {
-    background-color: #007c5d;
+button, input[type="submit"] {
+    background-color: #003a66;
+    border-color:#004488;
     color: white;
     border-radius: 8px;
+    padding: 6px 12px;
+    margin-left: 0;
+    margin-right: 0;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    min-width: 24ch;
+}
+
+nav button {
+    background-color: #007c5d;
+    border-color:#006655;
     padding: 4px 8px;
     margin-left: 4px;
     margin-right: 2px;
+    margin-top: 0;
+    margin-bottom: 0;
+    min-width: 8ch;
 }
 
 nav form {
@@ -113,6 +130,7 @@ main {
     border-radius: 8px;
     font-size: 9pt;
     padding: 2px 8px;
+    margin-top: 0.5rem;
 }
 
 .panel-4 {
@@ -129,6 +147,8 @@ main {
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
+    max-width: 50ch;
+    padding: 0.5rem;
 }
 
 .container {
@@ -137,6 +157,7 @@ main {
     margin: auto;
     margin-top: 4rem;
     background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.5rem;
 }
 
 h2 {
