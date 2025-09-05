@@ -7,10 +7,10 @@ const resultDiv = document.getElementById("searchResults");
 function searchRecommendations(event) {
     event.preventDefault();
     console.log("Searching...");
-    const searchPhrase = searchInput.value.toLowerCase();
+    let searchPhrase = searchInput.value.toLowerCase();
     if (searchPhrase === "") return;
 
-    
+    if (searchPhrase === "country") searchPhrase = "countries";//rewriting the search word to plural so that I don't have to deal with -y not matching -ies
 
     fetch("travel_recommendation_api.json")
     .then(response => response.json())
@@ -60,19 +60,33 @@ function searchRecommendations(event) {
                     holder.innerHTML += `<h2>${result.name}</h2>`; // Country name
               
                     result.cities.forEach(city => {
-                      holder.innerHTML += `<h3>${city.name}</h3>`;
-                      holder.innerHTML += `<img src="./images/${city.imageUrl}" alt="illustration">`;
-                      holder.innerHTML += `<p>${city.description}</p>`;
+                        const holder2 = document.createElement("div");
+                        holder2.innerHTML += `<h3>${city.name}</h3>`;
+                        holder2.innerHTML += `<img src="./images/${city.imageUrl}" alt="illustration">`;
+                        holder2.innerHTML += `<p>${city.description}</p>`;
+
+                        holder2.classList.add("recommendation");
+                        holder.appendChild(holder2);
+                        const visitBtn = document.createElement("button");
+                        visitBtn.innerHTML = "Visit";
+                        holder2.appendChild(visitBtn);
                     });
-              
+
+                    holder.classList.add("country-recommendation");
+                    resultDiv.appendChild(holder);
+
                 } else {
                     holder.innerHTML += `<h2>${result.name}</h2>`;
                     holder.innerHTML += `<img src="./images/${result.imageUrl}" alt="illustration">`;
                     holder.innerHTML += `<p>${result.description}</p>`;
+                    holder.classList.add("recommendation");
+                    resultDiv.appendChild(holder);
+                    const visitBtn = document.createElement("button");
+                    visitBtn.innerHTML = "Visit";
+                    holder.appendChild(visitBtn);
                 }
                 
-                holder.classList.add("recommendation");
-                resultDiv.appendChild(holder);
+                
             });
 
         } else if (matchedResults.length > 0) {
@@ -83,6 +97,9 @@ function searchRecommendations(event) {
                 holder.innerHTML += `<p>${result.description}</p>`;
                 holder.classList.add("recommendation");
                 resultDiv.appendChild(holder);
+                const visitBtn = document.createElement("button");
+                visitBtn.innerHTML = "Visit";
+                holder.appendChild(visitBtn);
             });
         } else {
             resultDiv.innerHTML = 'No locations matched your search.';
