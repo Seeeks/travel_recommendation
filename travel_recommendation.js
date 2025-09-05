@@ -77,13 +77,16 @@ function searchRecommendations(event) {
 
                 } else {
                     holder.innerHTML += `<h2>${result.name}</h2>`;
-                    holder.innerHTML += `<img src="./images/${result.imageUrl}" alt="illustration">`;
-                    holder.innerHTML += `<p>${result.description}</p>`;
-                    holder.classList.add("recommendation");
-                    resultDiv.appendChild(holder);
-                    const visitBtn = document.createElement("button");
-                    visitBtn.innerHTML = "Visit";
-                    holder.appendChild(visitBtn);
+
+                    if (result.imageUrl && result.description) {
+                        holder.innerHTML += `<img src="./images/${result.imageUrl}" alt="illustration">`;
+                        holder.innerHTML += `<p>${result.description}</p>`;
+                        holder.classList.add("recommendation");
+                        resultDiv.appendChild(holder);
+                        const visitBtn = document.createElement("button");
+                        visitBtn.innerHTML = "Visit";
+                        holder.appendChild(visitBtn);
+                    }
                 }
                 
                 
@@ -93,13 +96,15 @@ function searchRecommendations(event) {
             matchedResults.forEach(result => {
                 const holder = document.createElement("div");
                 holder.innerHTML += `<h2>${result.name}</h2>`;
-                holder.innerHTML += `<img src="./images/${result.imageUrl}" alt="illustration">`;
-                holder.innerHTML += `<p>${result.description}</p>`;
-                holder.classList.add("recommendation");
-                resultDiv.appendChild(holder);
-                const visitBtn = document.createElement("button");
-                visitBtn.innerHTML = "Visit";
-                holder.appendChild(visitBtn);
+                if (result.imageUrl && result.description) {
+                    holder.innerHTML += `<img src="./images/${result.imageUrl}" alt="illustration">`;
+                    holder.innerHTML += `<p>${result.description}</p>`;
+                    holder.classList.add("recommendation");
+                    resultDiv.appendChild(holder);
+                    const visitBtn = document.createElement("button");
+                    visitBtn.innerHTML = "Visit";
+                    holder.appendChild(visitBtn);
+                }
             });
         } else {
             resultDiv.innerHTML = 'No locations matched your search.';
