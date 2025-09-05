@@ -18,20 +18,72 @@ function searchRecommendations(event) {
         resultDiv.innerHTML = "";
         const categories = Object.keys(data);
         const matchedKey = categories.find(key => key.toLowerCase().includes(searchPhrase) );
+        
+        const matchedResults = [];
 
-        if (matchedKey) {
-            const results = data[matchedKey];
+        Object.entries(data).forEach(([key, items]) => {
+            items.forEach(item => {
+                if ((item.name && item.name.toLowerCase().includes(searchPhrase))
+                ||(item.description && item.description.toLowerCase().includes(searchPhrase))) {
+                    matchedResults.push({
+                      name: item.name,
+                      imageUrl: item.imageUrl,
+                      description: item.description
+                    });
+                  }
 
-            results.forEach( (result) => {
-                const holder = document.createElement("div");
-                holder.innerHTML += `<h2>${result.name}</h2>`;
-                holder.innerHTML += `<img src="${result.imageUrl}" alt="illustration">`;
-                holder.innerHTML += `<p>${result.description}</p>`;
-                resultDiv.appendChild(holder);
+                  if (key === "countries" && item.cities) {
+                    item.cities.forEach(city => {
+                        if ((city.name && city.name.toLowerCase().includes(searchPhrase))
+                    ||(city.description && city.description.toLowerCase().includes(searchPhrase))) {
+                            matchedResults.push({
+                            name: city.name,
+                            imageUrl: city.imageUrl,
+                            description: city.description
+                            });
+                        }
+                    });
+                }
             });
 
             
+        });
+
+        if (matchedKey) {
             
+            const results = data[matchedKey];
+            
+            results.forEach( (result) => {
+                const holder = document.createElement("div");
+
+                if (matchedKey === "countries" && result.cities) {
+                    holder.innerHTML += `<h2>${result.name}</h2>`; // Country name
+              
+                    result.cities.forEach(city => {
+                      holder.innerHTML += `<h3>${city.name}</h3>`;
+                      holder.innerHTML += `<img src="./images/${city.imageUrl}" alt="illustration">`;
+                      holder.innerHTML += `<p>${city.description}</p>`;
+                    });
+              
+                } else {
+                    holder.innerHTML += `<h2>${result.name}</h2>`;
+                    holder.innerHTML += `<img src="./images/${result.imageUrl}" alt="illustration">`;
+                    holder.innerHTML += `<p>${result.description}</p>`;
+                }
+                
+                holder.classList.add("recommendation");
+                resultDiv.appendChild(holder);
+            });
+
+        } else if (matchedResults.length > 0) {
+            matchedResults.forEach(result => {
+                const holder = document.createElement("div");
+                holder.innerHTML += `<h2>${result.name}</h2>`;
+                holder.innerHTML += `<img src="./images/${result.imageUrl}" alt="illustration">`;
+                holder.innerHTML += `<p>${result.description}</p>`;
+                holder.classList.add("recommendation");
+                resultDiv.appendChild(holder);
+            });
         } else {
             resultDiv.innerHTML = 'No locations matched your search.';
         }

@@ -216,3 +216,7 @@ img.icon {
         flex-grow: 1;
     }
 }
+
+.recommendation {
+    margin-bottom: 1rem;
+}
