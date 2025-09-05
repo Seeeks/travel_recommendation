@@ -28,18 +28,29 @@
     <div class="container">
         <h2>Contact Us</h2>
         
-        <p>We would love to hear from you. Drop us a line and we will get back to you.</p>
+        <p id="contactIntro">We would love to hear from you. Drop us a line and we will get back to you.</p>
         <form method="post" action="#" id="contactForm">
             <label for="nameInput">Name</label>
-            <input value="" name="name" id="nameInput" type="text">
+            <input value="" name="name" id="nameInput" type="text" required>
             <label for="emailInput">Email</label>
-            <input value="" name="email" id="emailInput" type="email">
+            <input value="" name="email" id="emailInput" type="email" required>
             <label for="nameInput">Name</label>
-            <textarea name="message" id="msgTextarea" placeholder="Write your message here">
-            </textarea>
+            <textarea name="message" id="msgTextarea" placeholder="Write your message here"></textarea>
             <input type="submit" value="Send message" id="submitContact">
         </form>
     </div>
     </main>
+    <script language="javascript">
+        const contactForm = document.getElementById("contactForm");
+        const sendBtn = document.getElementById("sendContact");
+
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const contactIntro = document.getElementById("contactIntro");
+
+            contactIntro.innerHTML = "Thank you for your message!";
+            sendBtn.setAttribute("disabled", "disabled");
+        });
+    </script>
 </body>
 </html>

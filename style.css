@@ -55,6 +55,11 @@ nav ul li {
     padding: 4px 8px;
 }
 
+input, textarea {
+    color: black;
+    padding: 3px;
+}
+
 button, input[type="submit"] {
     background-color: #003a66;
     border-color:#004488;
